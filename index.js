@@ -26,6 +26,9 @@ async function run() {
             res.send({ token })
         })
 
+
+        //Limited playlist
+
         app.get('/playlist', async (req, res) => {
             const query = {};
             const cursor = playlistCollection.find(query);
@@ -34,6 +37,7 @@ async function run() {
         })
 
 
+        //Full Playlist
         app.get('/playlists', async (req, res) => {
             const query = {};
             const cursor = playlistCollection.find(query);
@@ -41,13 +45,14 @@ async function run() {
             res.send(playlist)
         })
 
+        //posying comments
         app.post('/comments', async (req, res) => {
             const comments = req.body;
             const result = await commentCollection.insertOne(comments)
             res.send(result)
         })
 
-
+        //getting comments using service id
         app.get('/comments', async (req, res) => {
             let query = {};
             if (req.query.comment_id) {
@@ -60,6 +65,7 @@ async function run() {
             res.send(comments)
         })
 
+        //getting comment using email
         app.get('/comment', async (req, res) => {
             let query = {};
             if (req.query.email) {
@@ -73,7 +79,7 @@ async function run() {
         })
 
 
-
+        //individual playlist using id
         app.get('/playlists/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) }

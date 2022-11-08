@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Kashmir, A Land of Unimaginable Beauty",
+        "period": "7 days",
+        "location": "Kashmir, India",
+        "totalCost": 40000,
+        "img": "https://i.ibb.co/nCS39V3/top-image-1.jpg",
+        "details": "Soak your memories in a warm cup of Kahwah Tea, while indulging in the varied landscapes of Kashmir. Take in the crisp misty air, while gorging on warm Kashmiri pulao and home-made Rista. Feel your heart synchronize with the gushing waters that travel from the glaciers above. Dust the snow off your shoulders after a long trek up a hill and watch the sun-kissed, snow-capped mountains.A valley between the Great Himalayan range and the Pir Panjal mountain range, Kashmir is a place of beautiful simplicity and pristine natural beauty. Kashmir is painted with a unique culture that keeps you intrigued throughout your journey, from Srinagar to Sonamarg and Gulmarg till Pahalgam.Kashmir has a variety of terrains ranging from lakes, snow-capped mountains, coniferous kissed hills to glacier fed rivers. On one hand, Kashmir is covered with wild untouched terrain and on the other, there are fields of saffron and orchards of apples awaiting their full bloom. They have a variety of flowers that are a show in itself. They wait, as photographers after photographers attempt to do justice to them"
+    },
+    {
+        "name": "Hanza Valley, Heaven on Earth",
+        "period": "10 days",
+        "totalCost": 80000,
+        "location": "Gilgit, Pakistan",
+        "img": "https://i.ibb.co/xSktHxR/maxresdefault.jpg",
+        "details": "Allah Almighty has blessed Pakistan with aesthetic and natural beauty. It has a lot of places which are deadly covered with beautiful scenes. Such glamorous and wonderful scenes make a person think about Allah's glory and creativity. Hunza is among the most beautiful areas of Pakistan. Hunza was often known as 'Heaven on Earth' is a beautiful mountainous valley. It is located in the Gilgit-Baltistan region which is in the extreme northern part that connects China with Pakistan. Gilgit-Baltistan region Biafo Glaciers is the homeland of adventures treks, k2 base camp trek, Concordia trek, and gondogoro la trek. It is surrounded by several high peaks including Rakaposhi, Ladyfinger peak and Hunza peak. Hunza was previously a princely state which survived until 1974 and was dissolved by Zulfiqar Ali Bhutto. Its capital was the town of Baltit also known as Karimabad."
+    },
+    {
+        "name": "Sikkim, Switzerland of North East India",
+        "period": "8 days",
+        "location": "Sikkim, India",
+        "totalCost": 30000,
+        "img": "https://i.ibb.co/d44r28V/fully-vaccinated-begin-planning-your-long-awaited-sikkim-trip.jpg",
+        "details": "Sikkim, state of India, located in the northeastern part of the country, in the eastern Himalayas. It is one of the smallest states in India. Sikkim is bordered by the Tibet Autonomous Region of China to the north and northeast, by Bhutan to the southeast, by the Indian state of West Bengal to the south, and by Nepal to the west. The capital is Gangtok, in the southeastern part of the state. Long a sovereign political entity, Sikkim became a protectorate of India in 1950 and an Indian state in 1975. Its small size notwithstanding, Sikkim is of great political and strategic importance for India because of its location along several international boundaries. Area 2,740 square miles (7,096 square km). Pop. (2011) 607,688."
+    },
+    {
+        "name": "Incridible Phuket Island",
+        "period": "15 days",
+        "location": "Phuket, Thailand",
+        "totalCost": 140000,
+        "img": "https://i.ibb.co/VLzsCjw/3ea3e6f3-6b83-4b35-9e34-3f1150602bbf.jpg",
+        "details": "Phuket province is located in southern Thailand. It is the biggest Island of Thailand and sits on the Andaman sea. The nearest province to the north is Phang-nga and the nearest provinces to the east are Phang-nga and Krabi.Phuket has a large Chinese influence, so you will see many Chinese shrines and Chinese Restaurants around the City. A Chinese Vegetarian Festival is held there every year. While the Chinese community is quite big, there are many other ethnicities bringing all their traditions and festivals from all over the world to Phuket.Being a big island, Phuket is surrounded by many magnificent Beaches such as Rawai, Patong, Karon, Kamala, Kata Yai, Kata Noi, and Mai Khao. Laem Phromthep viewpoint is said to feature the most beautiful sunsets in Thailand.It isn't all just beaches though, there is also fantastic classical architecture such as the Goom Restaurant. That and the very welcome atmosphere and the famous Phuket NIGHTLIFE, you can see why the island is a hotspot for tourists in Thailand."
+    },
+    {
+        "name": "Magical Bali",
+        "period": "10 days",
+        "location": "Bali, Indonesia",
+        "totalCost": 80000,
+        "img": "https://i.ibb.co/n6z3PXz/960x0.jpg",
+        "details": "There is no other place like Bali in this world. A magical blend of culture, people, nature, activities, weather, culinary delights, nightlife, and beautiful accommodation. Bali is rated as one of the best travel destinations in the world by countless websites, review portals, and travel magazines each year - for very good reasons. Whatever your age, background, budget or interest, there is something great for everyone to explore and discover. And that's a promise."
+    },
+    {
+        "name": "Cox's-Bazar - World's Longest Sea-Beach",
+        "period": "3 days",
+        "location": "Cox's Bazar, Bangladesh",
+        "totalCost": 14000,
+        "img": "https://i.ibb.co/syBJKys/bigstock-wooden-fishing-boat-on-a-coxba-291157150-1554814132858.jpg",
+        "details": "Cox's Bazar is a town, a fishing port and district headquarters in Bangladesh. The beach in Cox's Bazar is an unbroken 125 km sandy sea beach with a gentle slope, one of the world's longest. Today, Cox's Bazar is one of the most-visited tourist destinations in Bangladesh, and now it has a international hotel chains. This place is better for local and foreign tourists, as well as to look after the nature and wildlife in the tourist spots of Cox's Bazar."
+    }
+]

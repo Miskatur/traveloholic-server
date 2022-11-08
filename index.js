@@ -32,6 +32,8 @@ async function run() {
             const playlist = await cursor.limit(3).toArray();
             res.send(playlist)
         })
+
+
         app.get('/playlists', async (req, res) => {
             const query = {};
             const cursor = playlistCollection.find(query);
@@ -45,12 +47,32 @@ async function run() {
             res.send(result)
         })
 
+
         app.get('/comments', async (req, res) => {
-            const query = {};
+            let query = {};
+            if (req.query.comment_id) {
+                query = {
+                    comment_id: req.query.comment_id
+                }
+            }
             const cursor = commentCollection.find(query);
             const comments = await cursor.toArray();
             res.send(comments)
         })
+
+        app.get('/comment', async (req, res) => {
+            let query = {};
+            if (req.query.email) {
+                query = {
+                    email: req.query.email
+                }
+            }
+            const cursor = commentCollection.find(query);
+            const reviews = await cursor.toArray();
+            res.send(reviews)
+        })
+
+
 
         app.get('/playlists/:id', async (req, res) => {
             const id = req.params.id;

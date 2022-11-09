@@ -15,6 +15,22 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@clu
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 
+function verifyJWT(req, res, next) {
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+        return res.status(401).send({ message: 'Unauthorized Access' })
+    }
+    const token = authHeader.split(' ')[1];
+    jwt.verify(token, process.env.ACCESS_TOKEN, function (error, decoded) {
+        if (error) {
+            return res.status(403).send({ message: 'Forbidden Access' })
+        }
+        req.decoded = decoded;
+        next();
+    })
+}
+
+
 async function run() {
     try {
         const playlistCollection = client.db('traveloholic').collection('playlist');
@@ -53,11 +69,12 @@ async function run() {
         })
 
         //posting comments
-        app.post('/comments', async (req, res) => {
+        app.post('/comments', verifyJWT, async (req, res) => {
             const comments = req.body;
             const result = await commentCollection.insertOne(comments)
             res.send(result)
         })
+
 
         //getting comments using service id
 
@@ -68,14 +85,18 @@ async function run() {
                     comment_id: req.query.comment_id
                 }
             }
-            console.log(req.body)
             const cursor = commentCollection.find(query);
             const comments = await cursor.toArray();
             res.send(comments)
         })
 
         //getting comment using email
-        app.get('/comment', async (req, res) => {
+        app.get('/comment', verifyJWT, async (req, res) => {
+            const decoded = req.decoded;
+            if (decoded.email !== req.query.email) {
+                return res.status(403).send({ message: 'Forbidden Access' })
+            }
+
             let query = {};
             if (req.query.email) {
                 query = {
@@ -107,7 +128,6 @@ async function run() {
             const id = req.params.id;
             const filter = { _id: ObjectId(id) }
             const comment = req.body.comments;
-            console.log(comment)
             const updateUser = {
                 $set: {
                     comment: comment

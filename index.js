@@ -45,7 +45,14 @@ async function run() {
             res.send(playlist)
         })
 
-        //posying comments
+        //Posting content to the playlist
+        app.post('/playlists', async (req, res) => {
+            const content = req.body;
+            const result = await playlistCollection.insertOne(content)
+            res.send(result)
+        })
+
+        //posting comments
         app.post('/comments', async (req, res) => {
             const comments = req.body;
             const result = await commentCollection.insertOne(comments)
@@ -53,6 +60,7 @@ async function run() {
         })
 
         //getting comments using service id
+
         app.get('/comments', async (req, res) => {
             let query = {};
             if (req.query.comment_id) {
@@ -60,6 +68,7 @@ async function run() {
                     comment_id: req.query.comment_id
                 }
             }
+            console.log(req.body)
             const cursor = commentCollection.find(query);
             const comments = await cursor.toArray();
             res.send(comments)
@@ -87,12 +96,34 @@ async function run() {
             res.send(content)
         })
 
+        app.get('/comments/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) }
+            const comment = await commentCollection.findOne(query)
+            res.send(comment)
+        })
+
+        app.patch('/comments/:id', async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: ObjectId(id) }
+            const comment = req.body.comments;
+            console.log(comment)
+            const updateUser = {
+                $set: {
+                    comment: comment
+                }
+            };
+            const result = await commentCollection.updateOne(filter, updateUser);
+            res.send(result)
+        })
+
         app.delete('/comment/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) }
             const result = await commentCollection.deleteOne(query)
             res.send(result)
         })
+
 
     }
     finally {

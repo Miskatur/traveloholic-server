@@ -69,7 +69,7 @@ async function run() {
         })
 
         //posting comments
-        app.post('/comments', verifyJWT, async (req, res) => {
+        app.post('/comments', async (req, res) => {
             const comments = req.body;
             const result = await commentCollection.insertOne(comments)
             res.send(result)

@@ -57,7 +57,8 @@ async function run() {
         app.get('/playlists', async (req, res) => {
             const query = {};
             const cursor = playlistCollection.find(query);
-            const playlist = await cursor.toArray();
+            const playlist = await cursor.toArray()
+            const reversePlaylist = playlist.sort().reverse();
             res.send(playlist)
         })
 

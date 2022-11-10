@@ -47,7 +47,7 @@ async function run() {
 
         app.get('/playlist', async (req, res) => {
             const query = {};
-            const cursor = playlistCollection.find(query);
+            const cursor = playlistCollection.find(query).sort({ "_id": -1 });
             const playlist = await cursor.limit(3).toArray();
             res.send(playlist)
         })
@@ -56,9 +56,9 @@ async function run() {
         //Full Playlist
         app.get('/playlists', async (req, res) => {
             const query = {};
-            const cursor = playlistCollection.find(query);
+            const cursor = playlistCollection.find(query).sort({ "_id": -1 });
             const playlist = await cursor.toArray()
-            const reversePlaylist = playlist.sort().reverse();
+            // const reversePlaylist = playlist.sort().reverse();
             res.send(playlist)
         })
 
